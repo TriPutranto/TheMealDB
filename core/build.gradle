@@ -1,0 +1,82 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-parcelize'
+}
+
+android {
+    compileSdkVersion Versions.compiledSdk
+    buildToolsVersion Versions.buildTools
+
+    defaultConfig {
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.targetSdk
+        versionCode Versions.versionCode
+        versionName Versions.versionName
+
+        testInstrumentationRunner TestInstrumentation.testRunner
+
+        buildConfigField "String", "BASE_URL", "\"https://www.themealdb.com/api/json/v1/1/\""
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    //Android
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation AndroidLibraries.kotlin
+    implementation AndroidLibraries.appCompat
+    implementation AndroidLibraries.coreKtx
+    implementation AndroidLibraries.constraintLayout
+    implementation AndroidLibraries.legacy
+
+    //Testing
+    testImplementation Testing.jUnit
+    androidTestImplementation Testing.extJUnit
+    androidTestImplementation Testing.espressoCore
+
+    //Network
+    implementation Network.retrofit
+    implementation Network.converterGson
+    implementation Network.gson
+    implementation Network.okHttp
+
+    //Lifecylcle
+    implementation Lifecycle.lifecycleViewModel
+    implementation Lifecycle.lifecycleLiveData
+    implementation Lifecycle.lifecycleCommonJava8
+    implementation Lifecycle.lifecycleExtension
+
+    //Hilt
+    implementation Hilt.daggerHilt
+    implementation Hilt.hiltLifecycleViewModel
+    kapt Hilt.daggerHiltCompiler
+    kapt Hilt.hiltCompiler
+
+    //Coroutines
+    implementation Coroutines.coroutinesCore
+    implementation Coroutines.coroutinesAndroid
+
+    //Room
+    implementation Room.roomRuntime
+    implementation Room.roomKtx
+    kapt Room.roomCompiler
+
+    //Timber
+    implementation Timber.timber
+}

@@ -1,0 +1,87 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.triputranto.themealdb"
+        minSdkVersion 22
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+    implementation project(":core")
+    implementation AndroidLibraries.kotlin
+    implementation AndroidLibraries.appCompat
+    implementation AndroidLibraries.coreKtx
+    implementation AndroidLibraries.constraintLayout
+    implementation AndroidLibraries.legacy
+    implementation AndroidLibraries.materialDesign
+
+    //Testing
+    testImplementation Testing.jUnit
+    androidTestImplementation Testing.extJUnit
+    androidTestImplementation Testing.espressoCore
+
+    //Network
+    implementation Network.retrofit
+    implementation Network.converterGson
+    implementation Network.gson
+
+    //Lifecylcle
+    implementation Lifecycle.lifecycleViewModel
+    implementation Lifecycle.lifecycleLiveData
+    implementation Lifecycle.lifecycleCommonJava8
+    implementation Lifecycle.lifecycleExtension
+
+    //Hilt
+    implementation Hilt.daggerHilt
+    implementation Hilt.hiltLifecycleViewModel
+    kapt Hilt.daggerHiltCompiler
+    kapt Hilt.hiltCompiler
+
+    //Navigation
+    implementation Navigation.navigationFragment
+    implementation Navigation.navigationUI
+
+    //Glide
+    implementation Glide.glide
+    kapt Glide.glideCompiler
+
+    //Room
+    implementation Room.roomRuntime
+    implementation Room.roomKtx
+    kapt Room.roomCompiler
+
+    //Timber
+    implementation Timber.timber
+
+}
