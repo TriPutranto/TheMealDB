@@ -7,5 +7,5 @@ import com.triputranto.core.domain.usecase.AppUseCase
 
 class MealsViewModel @ViewModelInject constructor(private val appUseCase: AppUseCase?) :
     ViewModel() {
-    fun getMealByCategory(category: String) = appUseCase?.getFilterByCategory(category)?.asLiveData()
+    fun getMealByCategory(category: String) = appUseCase?.getMealsByCategory(category)?.asLiveData()
 }
