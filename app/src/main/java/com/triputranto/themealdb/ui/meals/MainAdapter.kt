@@ -37,9 +37,9 @@ class MainAdapter(private val listener: ItemListener):
     class ViewHolder(private val binding: ItemMealBinding, private val listener: ItemListener) : RecyclerView.ViewHolder(binding.root) {
         fun bind(meal: Meal) {
             with(binding) {
-                tvName.text = meal.strMeal
-                ivThumb.load(meal.strMealThumb)
-                root.setOnClickListener { listener.onItemClicked(meal.idMeal) }
+                tvName.text = meal.name
+                ivThumb.load(meal.thumbnail)
+                root.setOnClickListener { listener.onItemClicked(meal.id) }
             }
         }
     }

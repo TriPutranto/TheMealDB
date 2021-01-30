@@ -13,15 +13,199 @@
         android:layout_centerInParent="true"
         android:visibility="gone"/>
 
-    <ImageView
-        android:id="@+id/iv_thumb"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="175dp"
-        android:contentDescription="@string/thumbnail" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/iv_thumb"
+            android:layout_width="match_parent"
+            tools:src="@mipmap/ic_launcher"
+            android:layout_height="175dp"
+            android:contentDescription="@string/thumbnail" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Nasi Goreng"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:layout_below="@+id/iv_thumb"/>
+
+        <TextView
+            android:id="@+id/tv_tags"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="tags"
+            android:layout_below="@+id/tv_name"
+            android:layout_marginStart="16dp"/>
+
+        <TextView
+            android:id="@+id/tv_youtube"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="tags"
+            android:layout_below="@+id/tv_tags"
+            android:textColor="@android:color/holo_blue_light"
+            android:layout_marginStart="16dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingeredient"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:layout_weight="1"
+                android:text="Measure"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tv_ingredient_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ingeredient"
+                android:textColor="@android:color/black"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tv_measure_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:layout_weight="1"
+                android:text="Measure"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tv_ingredient_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ingeredient"
+                android:textColor="@android:color/black"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tv_measure_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:layout_weight="1"
+                android:text="Measure"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tv_ingredient_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ingeredient"
+                android:textColor="@android:color/black"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tv_measure_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:layout_weight="1"
+                android:text="Measure"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tv_ingredient_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ingeredient"
+                android:textColor="@android:color/black"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tv_measure_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:layout_weight="1"
+                android:text="Measure"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tv_ingredient_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ingeredient"
+                android:textColor="@android:color/black"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tv_measure_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:layout_weight="1"
+                android:text="Measure"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
 
 </RelativeLayout>

@@ -57,8 +57,22 @@ class DetailMealFragment : Fragment() {
     private fun setupUI(meal: Meal?) {
         with(binding) {
             if (meal != null) {
-                ivThumb.load(meal.strMealThumb)
-                tvName.text = meal.strMeal
+                ivThumb.load(meal.thumbnail)
+                tvName.text = meal.name
+                tvTags.text = meal.tags
+                tvYoutube.text = meal.youtube
+
+                tvIngredient1.text = meal.ingredient1
+                tvIngredient2.text = meal.ingredient2
+                tvIngredient3.text = meal.ingredient3
+                tvIngredient4.text = meal.ingredient4
+                tvIngredient5.text = meal.ingredient5
+
+                tvMeasure1.text = meal.measure1
+                tvMeasure2.text = meal.measure2
+                tvMeasure3.text = meal.measure3
+                tvMeasure4.text = meal.measure4
+                tvMeasure5.text = meal.measure5
             }
         }
     }

@@ -1,6 +1,7 @@
 package com.triputranto.themealdb.ui.meals
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,6 +21,7 @@ import com.triputranto.themealdb.utils.hide
 import com.triputranto.themealdb.utils.observe
 import com.triputranto.themealdb.utils.show
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 @AndroidEntryPoint
 class MealsFragment : Fragment(), MainAdapter.ItemListener {
@@ -73,7 +75,7 @@ class MealsFragment : Fragment(), MainAdapter.ItemListener {
 
     override fun onItemClicked(id: Int) {
         findNavController().navigate(
-            R.id.action_charactersFragment_to_characterDetailFragment,
+            R.id.action_mealsFragment_to_mealDetailFragment,
             bundleOf(KEY_ID to id)
         )
     }
